@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="William Wadecki — Construction Engineer specializing in bridges, roads, infrastructure, and refinery projects.">
+<title>William Wadecki | Construction Engineer</title>
+<style>
+:root{
+  --bg:#0b0f14;
+  --panel:#121820;
+  --panel2:#18212b;
+  --text:#f4f7fa;
+  --muted:#aeb9c4;
+  --accent:#d7a84a;
+  --line:rgba(255,255,255,.10);
+  --max:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(92%,var(--max));margin:auto}
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:20;
+  background:rgba(11,15,20,.88);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;letter-spacing:.4px}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:26px;font-size:14px;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+.hero{
+  min-height:92vh;
+  display:flex;align-items:center;
+  padding:120px 0 80px;
+  background:
+    linear-gradient(90deg,rgba(11,15,20,.97) 0%,rgba(11,15,20,.78) 48%,rgba(11,15,20,.40) 100%),
+    linear-gradient(135deg,#18212b,#0b0f14 60%);
+}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:center}
+.kicker{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:13px;margin-bottom:16px}
+h1{font-size:clamp(44px,7vw,78px);line-height:1.02;letter-spacing:-2px;margin-bottom:24px}
+.hero p{max-width:680px;color:var(--muted);font-size:20px}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0}
+.tag{border:1px solid var(--line);padding:9px 13px;border-radius:999px;color:#dbe3ea;font-size:13px;background:rgba(255,255,255,.03)}
+.btn{
+  display:inline-block;padding:13px 19px;border:1px solid var(--accent);
+  border-radius:6px;color:var(--bg);background:var(--accent);font-weight:700;
+  margin-top:10px;
+}
+.btn.secondary{margin-left:10px;background:transparent;color:var(--text);border-color:var(--line)}
+.hero-card{
+  min-height:390px;border:1px solid var(--line);border-radius:18px;
+  background:
+    linear-gradient(145deg,rgba(215,168,74,.14),rgba(255,255,255,.02)),
+    var(--panel);
+  display:flex;align-items:flex-end;padding:30px;
+  box-shadow:0 25px 70px rgba(0,0,0,.28);
+}
+.hero-card div{border-left:3px solid var(--accent);padding-left:18px}
+.hero-card strong{display:block;font-size:25px;margin-bottom:6px}
+.hero-card span{color:var(--muted)}
+section{padding:95px 0}
+.section-head{margin-bottom:42px;max-width:700px}
+.eyebrow{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:12px}
+h2{font-size:clamp(30px,5vw,48px);line-height:1.1;margin:10px 0 14px}
+.section-head p{color:var(--muted)}
+.about{background:#0e141b}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.about p{color:var(--muted);font-size:17px}
+.quote{
+  border-left:3px solid var(--accent);padding:20px 25px;
+  background:rgba(255,255,255,.03);font-size:25px;font-weight:700;
+}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:25px;
+  min-height:220px;
+}
+.card .num{color:var(--accent);font-weight:800;font-size:13px}
+.card h3{font-size:20px;margin:18px 0 10px}
+.card p{color:var(--muted);font-size:14px}
+.approach{background:#0e141b}
+.approach-box{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  border:1px solid var(--line);background:var(--line);
+}
+.approach-item{background:var(--panel);padding:34px}
+.approach-item h3{font-size:24px;margin-bottom:8px}
+.approach-item p{color:var(--muted)}
+.projects{
+  min-height:300px;border:1px dashed rgba(215,168,74,.45);border-radius:16px;
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:40px;
+  background:linear-gradient(145deg,rgba(215,168,74,.06),rgba(255,255,255,.02));
+}
+.projects p{color:var(--muted);max-width:600px}
+.contact{background:#0e141b}
+.contact-box{
+  display:flex;justify-content:space-between;gap:30px;align-items:center;
+  padding:42px;border:1px solid var(--line);border-radius:16px;background:var(--panel);
+}
+.contact-box p{color:var(--muted)}
+footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+@media(max-width:850px){
+  .nav-links{display:none}
+  .hero-grid,.about-grid{grid-template-columns:1fr}
+  .hero-card{min-height:260px}
+  .cards{grid-template-columns:1fr 1fr}
+  .approach-box{grid-template-columns:1fr}
+  .contact-box{display:block}
+}
+@media(max-width:520px){
+  h1{font-size:46px}
+  .hero p{font-size:17px}
+  .cards{grid-template-columns:1fr}
+  .btn.secondary{margin-left:0}
+  .contact-box{padding:28px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#top">William <span>Wadecki</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="kicker">Construction Engineer</div>
+      <h1>Building structures.<br>Solving challenges.</h1>
+      <p>Engineering the future, one project at a time — with a practical focus on quality, precision, safety, and reliable project delivery.</p>
+      <div class="tags">
+        <span class="tag">Bridges</span>
+        <span class="tag">Roads</span>
+        <span class="tag">Infrastructure</span>
+        <span class="tag">Refineries</span>
+      </div>
+      <a class="btn" href="#contact">Professional Inquiries</a>
+      <a class="btn secondary" href="#expertise">Explore Expertise</a>
+    </div>
+    <div class="hero-card">
+      <div>
+        <strong>Precision. Integrity. Excellence.</strong>
+        <span>Professional construction engineering focused on dependable results and lasting infrastructure.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">About</div>
+      <h2>Experience built around real-world challenges.</h2>
+    </div>
+    <div class="about-grid">
+      <p>I’m William Wadecki, a construction engineer focused on delivering practical, reliable solutions across complex construction and infrastructure projects.</p>
+      <div class="quote">“Good engineering turns difficult challenges into dependable solutions.”</div>
+      <p>My professional interests include bridges, roads, infrastructure, and refinery projects, with an emphasis on quality, precision, safety, and successful project delivery.</p>
+      <p>From planning and coordination to technical problem-solving, the goal is simple: build work that performs, lasts, and earns trust.</p>
+    </div>
+  </div>
+</section>
+
+<section id="expertise">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Expertise</div>
+      <h2>Where engineering meets execution.</h2>
+      <p>A professional focus across major construction and infrastructure disciplines.</p>
+    </div>
+    <div class="cards">
+      <article class="card"><div class="num">01</div><h3>Construction Engineering</h3><p>Project planning, coordination, technical problem-solving, and practical construction support.</p></article>
+      <article class="card"><div class="num">02</div><h3>Bridges & Structures</h3><p>Infrastructure solutions designed around durability, performance, and dependable execution.</p></article>
+      <article class="card"><div class="num">03</div><h3>Roads & Infrastructure</h3><p>Supporting reliable transportation and infrastructure projects with long-term performance in mind.</p></article>
+      <article class="card"><div class="num">04</div><h3>Refinery Projects</h3><p>Professional involvement across complex onshore and offshore refinery environments.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="approach">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Approach</div>
+      <h2>Three principles guide the work.</h2>
+    </div>
+    <div class="approach-box">
+      <div class="approach-item"><h3>Precision</h3><p>Attention to technical detail and disciplined execution.</p></div>
+      <div class="approach-item"><h3>Integrity</h3><p>Clear communication, accountability, and professional standards.</p></div>
+      <div class="approach-item"><h3>Excellence</h3><p>A commitment to dependable results and continuous improvement.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Projects</div>
+      <h2>Selected Projects</h2>
+      <p>Your real project photos, project names, locations, roles, and descriptions can be added here as your portfolio grows.</p>
+    </div>
+    <div class="projects">
+      <p><strong>Project portfolio area</strong><br><br>Add your strongest construction-site and completed-project photographs here to showcase your experience professionally.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Contact</div>
+      <h2>Let’s discuss the next project.</h2>
+      <p>For professional inquiries, project opportunities, and collaborations.</p>
+    </div>
+    <div class="contact-box">
+      <div>
+        <h3>William Wadecki</h3>
+        <p>Construction Engineer</p>
+      </div>
+      <a class="btn" href="mailto:YOUR-EMAIL@example.com">Send a Professional Inquiry</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">© 2026 William Wadecki. Construction Engineer.</div>
+</footer>
+</body>
+</html>
